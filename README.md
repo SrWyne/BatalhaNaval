@@ -1,100 +1,73 @@
-# Desafio Batalha Naval - Três Níveis de Complexidade
+🚢 Como Jogar Batalha Naval
 
-Bem-vindo ao desafio "Batalha Naval"! Este projeto desafiará suas habilidades de programação utilizando vetores e matrizes para simular um jogo de Batalha Naval, dividido em três níveis: Novato, Aventureiro e Mestre. Em cada nível, novas funcionalidades serão adicionadas, tornando o desafio progressivamente mais complexo.
+A Batalha Naval, inspirada no clássico Battleship, é um jogo de estratégia onde o objetivo é localizar e destruir todos os navios do adversário.
 
-## 🎮 Nível Novato
+🎯 Objetivo do Jogo
 
-Neste nível inicial, você implementará a lógica básica de posicionamento de navios em um tabuleiro de Batalha Naval utilizando vetores bidimensionais.
+Afundar todos os navios do oponente antes que ele afunde os seus.
 
-### 🚩 Objetivos:
-- **Posicionamento dos Navios:** O sistema deve simular a localização de dois navios no tabuleiro, um posicionado verticalmente e outro horizontalmente.
-- **Utilização de Vetores:** Os navios serão posicionados utilizando vetores bidimensionais, com coordenadas X e Y.
-- **Exibição de Coordenadas:** O sistema deve exibir as coordenadas de cada parte dos navios no console utilizando `printf`.
+🗺️ O Tabuleiro
 
-### 📥 Entrada de Dados:
-- Os valores serão inseridos manualmente por meio de variáveis no código.
+O jogo acontece em um tabuleiro 10x10:
 
-### 📤 Saída de Dados:
-- Após o posicionamento, o sistema deve exibir as coordenadas dos navios de forma clara e organizada.
+Linhas: numeradas de 0 a 9
 
----
+Colunas: identificadas de A a J
 
-## 🛡️ Nível Aventureiro
+Cada posição representa uma coordenada (ex: B5, H2, D9).
 
-No nível Aventureiro, você expandirá o tabuleiro e adicionará mais navios, incluindo posicionamentos na diagonal.
+🚢 Posicionamento dos Navios
 
-### 🆕 Diferença em relação ao Nível Novato:
-- **Tabuleiro 10x10:** O tabuleiro será expandido para uma matriz 10x10.
-- **Posicionamento de Quatro Navios:** O sistema deverá posicionar quatro navios, incluindo dois na diagonal.
-- **Exibição Completa do Tabuleiro:** O sistema exibirá toda a matriz, onde 0 indica uma posição sem navio e 3 indica uma posição ocupada.
+Antes do jogo começar:
 
-### 🚩 Novas Funcionalidades:
-- **Matriz 10x10:** Implementação de uma matriz maior para representar o tabuleiro.
-- **Posicionamento de Navios na Diagonal:** Adição de navios posicionados diagonalmente.
-- **Exibição do Tabuleiro Completo:** O sistema mostrará o tabuleiro completo, indicando as posições ocupadas e livres.
+Cada jogador posiciona seus navios no tabuleiro.
 
----
+Os navios podem ser colocados:
 
-## 🏆 Nível Mestre
+Horizontalmente
 
-No nível Mestre, o desafio se intensifica com a implementação de habilidades especiais representadas por matrizes específicas no tabuleiro.
+Verticalmente
 
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Habilidades Especiais:** O sistema deve definir áreas de habilidades utilizando matrizes com padrões específicos: cone, cruz e octaedro.
-- **Estruturas de Repetição Aninhadas:** Utilização de loops aninhados para percorrer e preencher as áreas afetadas pelas habilidades.
+(Em versões avançadas) Diagonalmente
 
-### 🚩 Novas Funcionalidades:
-- **Matrizes de Habilidades:** Implementação de três matrizes para representar habilidades especiais no tabuleiro.
-- **Padrões de Habilidade:** Criação de padrões específicos (cone, cruz, octaedro) para definir as áreas afetadas.
-- **Exibição das Áreas Atingidas:** O sistema exibirá o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas afetadas.
+Os navios não podem:
 
-### Exemplo de Saída:
+Sair dos limites do tabuleiro
 
-Exemplo e comando:
-printf("%d ",matriz[i][j]);
+Sobrepor outro navio
 
-### Exemplo de saída de habilidade em cone:
+💣 Como Atacar
 
-0 0 1 0 0
+Os jogadores jogam em turnos.
 
-0 1 1 1 0
+Em cada turno:
 
-1 1 1 1 1
+O jogador escolhe uma coordenada (ex: E4).
 
-### Exemplo de saída de habilidade em octaedro:
+O sistema verifica a posição escolhida.
 
-0 0 1 0 0
+O resultado pode ser:
 
-0 1 1 1 0
+🌊 Água → Errou o ataque.
 
-0 0 1 0 0
+🚢 Navio atingido → Acertou!
 
-### Exemplo de saída de habilidade em cruz:
+💥 Navio afundado → Todas as partes daquele navio foram atingidas.
 
-0 0 1 0 0
+🔥 Habilidades Especiais (Modo Avançado)
 
-1 1 1 1 1
+No modo mais avançado, existem ataques com áreas de efeito:
 
-0 0 1 0 0
+Cone → Atinge várias posições em formato triangular.
 
+Cruz → Atinge posições em formato de cruz.
 
+Octaedro → Atinge posições em formato de losango.
 
+Essas habilidades atacam várias posições de uma vez, aumentando a estratégia do jogo.
 
+🏆 Como Vencer
 
----
+O jogo termina quando todos os navios de um jogador forem destruídos.
 
-## 📋 Requisitos Funcionais Comuns
-- **Entrada de Dados:** Os valores serão inseridos manualmente por meio de variáveis no código.
-- **Utilização de Matrizes:** Os dados devem ser estruturados de maneira eficiente utilizando matrizes.
-- **Exibição de Resultados:** Os resultados devem ser exibidos de forma clara e organizada.
-
-## 📌 Requisitos Não Funcionais Comuns
-- **Performance:** O sistema deve executar operações de forma eficiente, sem atrasos perceptíveis.
-- **Documentação:** O código deve ser bem documentado, com comentários claros sobre a função de cada parte do código.
-- **Manutenibilidade:** O código deve ser organizado e fácil de entender, facilitando futuras manutenções e expansões.
-
----
-
-Boa sorte no desenvolvimento deste desafio! Aproveite para aprimorar suas habilidades em vetores e matrizes enquanto progride pelos níveis.
-
-Equipe de Ensino - MateCheck
+Quem destruir todos os navios do adversário primeiro vence a partida.
